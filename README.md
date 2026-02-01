@@ -6,7 +6,7 @@ A fun web application built with Svelte that displays Chuck Norris-style facts a
 
 ## 🌐 Live Website
 
-Visit the website at: **[manishsharma004.github.io/claude-code-facts](https://manishsharma004.github.io/claude-code-facts)**
+Visit the website at: **[https://manishsharma004.github.io/claude-code-facts](https://manishsharma004.github.io/claude-code-facts)**
 
 ## Features
 
