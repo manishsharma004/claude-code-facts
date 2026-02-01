@@ -157,7 +157,7 @@
   },
   {
     "text": "Claude Code doesn't use breakpoints. Code breaks at the right point automatically.",
-    "icon": "🎯"
+    "icon": "🔴"
   },
   {
     "text": "Claude Code's TypeScript types are so accurate, they predict future requirements.",
@@ -181,7 +181,7 @@
   },
   {
     "text": "Claude Code doesn't use design patterns. Design patterns study Claude Code.",
-    "icon": "🎨"
+    "icon": "🧩"
   },
   {
     "text": "Claude Code's commits never conflict. Git creates new timelines to accommodate them.",
@@ -345,7 +345,7 @@
   },
   {
     "text": "When Claude Code uses Redis, caches never expire.",
-    "icon": "🔴"
+    "icon": "🗃️"
   },
   {
     "text": "Claude Code doesn't write edge cases. Code handles all cases automatically.",
@@ -373,7 +373,7 @@
   },
   {
     "text": "Claude Code doesn't use design reviews. Designs approve themselves.",
-    "icon": "🎨"
+    "icon": "👌"
   },
   {
     "text": "Claude Code's arrays start at whatever index makes the most sense.",
@@ -381,7 +381,7 @@
   },
   {
     "text": "When Claude Code writes Kotlin, Java becomes jealous.",
-    "icon": "🎯"
+    "icon": "🎪"
   },
   {
     "text": "Claude Code doesn't need rate limiting. APIs know when to slow down.",
