@@ -1,24 +1,24 @@
 # claude-code-facts
 Chuck Norris style jokes based on claude-code hype.
 
-## Chuck Norris Jokes Collection
+## Claude Code Jokes Collection
 
-This repository contains **110 Chuck Norris jokes** inspired by the legendary Chuck Norris Facts meme format from [chucknorrisfacts.net](https://www.chucknorrisfacts.net/).
+This repository contains **110 Claude Code jokes** in the style of the legendary Chuck Norris Facts meme format from [chucknorrisfacts.net](https://www.chucknorrisfacts.net/).
 
 ### Usage
 
-The jokes are stored in `chuck_norris_jokes.json` in a structured JSON format:
+The jokes are stored in `claude_code_jokes.json` in a structured JSON format:
 
 ```json
 {
   "jokes": [
-    "Chuck Norris doesn't read books. He stares them down until he gets the information he wants.",
-    "Time waits for no man. Unless that man is Chuck Norris.",
+    "Claude Code doesn't read books. He stares them down until he gets the information he wants.",
+    "Time waits for no man. Unless that man is Claude Code.",
     ...
   ],
   "metadata": {
     "total_jokes": 110,
-    "source_inspiration": "Chuck Norris Facts style jokes",
+    "source_inspiration": "Claude Code facts in Chuck Norris Facts style",
     "created": "2026-02-01"
   }
 }
@@ -26,11 +26,11 @@ The jokes are stored in `chuck_norris_jokes.json` in a structured JSON format:
 
 ### Examples
 
-- Chuck Norris doesn't read books. He stares them down until he gets the information he wants.
-- Chuck Norris can divide by zero.
-- Chuck Norris counted to infinity. Twice.
-- Chuck Norris doesn't sleep. He waits.
-- Chuck Norris makes onions cry.
+- Claude Code doesn't read books. He stares them down until he gets the information he wants.
+- Claude Code can divide by zero.
+- Claude Code counted to infinity. Twice.
+- Claude Code doesn't sleep. He waits.
+- Claude Code makes onions cry.
 
 ### Total Count
 
