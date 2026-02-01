@@ -1,0 +1,23 @@
+{
+  "name": "claude-code-facts",
+  "version": "1.0.0",
+  "description": "Chuck Norris style jokes based on claude-code hype",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "jokes",
+    "facts",
+    "chuck-norris",
+    "fun"
+  ],
+  "author": "manishsharma004",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manishsharma004/claude-code-facts.git"
+  }
+}
