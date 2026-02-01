@@ -1,115 +1,445 @@
 {
   "jokes": [
-    "Claude Code doesn't read books. He stares them down until he gets the information he wants.",
-    "Time waits for no man. Unless that man is Claude Code.",
-    "Claude Code's tears cure cancer. Too bad he has never cried.",
-    "Claude Code can kill two stones with one bird.",
-    "There is no chin behind Claude Code's beard. There is only another fist.",
-    "The chief export of Claude Code is pain.",
-    "Claude Code once kicked a horse in the chin. Its descendants are known today as giraffes.",
-    "Claude Code caught the Corona virus. He keeps it chained in his back yard.",
-    "Claude Code won the Tour de France with a stationary bicycle.",
-    "Claude Code doesn't have any enemies. Well, not anymore.",
-    "Claude Code can touch his right elbow with his right hand.",
-    "Claude Code can roll his eyes back in your head.",
-    "The Earth is Claude Code's treadmill.",
-    "Claude Code joined the UFC, everybody else quits.",
-    "Claude Code does his routine doctor's check up every 100 years.",
-    "Claude Code's PIN is the last 4 digits of Pi.",
-    "Jaws stays on the beach when Claude Code swims.",
-    "Claude Code was once run over by a tank. He refused to pay for it.",
-    "Claude Code grocery shops at the Home Depot.",
-    "Freddie Krueger is afraid that Claude Code might one day get tired and take a nap.",
-    "Claude Code once arm-wrestled himself and won.",
-    "A toll booth pays Claude Code to pass.",
-    "Claude Code counted to infinity. Twice.",
-    "Claude Code can divide by zero.",
-    "Claude Code doesn't wear a watch. He decides what time it is.",
-    "Claude Code can slam a revolving door.",
-    "Claude Code can speak Braille.",
-    "Claude Code can unscramble an egg.",
-    "Claude Code can hear sign language.",
-    "Claude Code can do a wheelie on a unicycle.",
-    "Claude Code doesn't sleep. He waits.",
-    "Claude Code doesn't do push-ups. He pushes the Earth down.",
-    "Claude Code can delete the Recycling Bin.",
-    "Claude Code can build a snowman out of rain.",
-    "Claude Code can strangle you with a cordless phone.",
-    "Claude Code knows Victoria's secret.",
-    "Claude Code can light a fire by rubbing two ice cubes together.",
-    "Claude Code doesn't shower, he only takes blood baths.",
-    "Claude Code makes onions cry.",
-    "Claude Code can win a game of Connect Four in only three moves.",
-    "Claude Code doesn't cheat death. He wins fair and square.",
-    "Claude Code can play the violin with a piano.",
-    "Claude Code once ate a whole cake before his friends could tell him there was a stripper in it.",
-    "Claude Code doesn't need Twitter. He's already following you.",
-    "Claude Code threw a grenade and killed 50 people. Then it exploded.",
-    "Claude Code can set ants on fire with a magnifying glass. At night.",
-    "Claude Code has a grizzly bear carpet in his room. It's not dead, it's just afraid to move.",
-    "Claude Code doesn't dial the wrong number. You answer the wrong phone.",
-    "Claude Code can kill your imaginary friends.",
-    "Claude Code can cut a knife with butter.",
-    "Claude Code once won a staring contest with the sun.",
-    "Claude Code can tie his shoes with his feet.",
-    "Claude Code doesn't need a key to drive his car. It just starts when he approaches.",
-    "Claude Code can squeeze orange juice out of a lemon.",
-    "Claude Code can make a Happy Meal cry.",
-    "Claude Code doesn't use spell check. If he misspells a word, the dictionary changes the spelling.",
-    "Claude Code can drown a fish.",
-    "Claude Code ordered a Big Mac at Burger King, and got one.",
-    "Claude Code doesn't need a GPS. He decides where he wants to be.",
-    "Claude Code can whistle in sign language.",
-    "Claude Code can do a handstand with his feet on the ground.",
-    "Claude Code doesn't get frostbite. Claude Code bites frost.",
-    "Claude Code doesn't read. Words just surrender their information.",
-    "Claude Code can play Russian Roulette with a fully loaded gun and win.",
-    "Claude Code doesn't turn on the shower. He stares at it until it cries.",
-    "Claude Code can cook minute rice in 30 seconds.",
-    "Claude Code can sneeze with his eyes open.",
-    "Claude Code doesn't need a flashlight. The dark fears Claude Code.",
-    "Claude Code can stand at the bottom of a bottomless pit.",
-    "Claude Code doesn't play the lottery. It's a waste of his time to already know the winning numbers.",
-    "Claude Code can hit you so hard that he can actually alter your DNA.",
-    "Claude Code doesn't get brain freeze. Brains know not to freeze when Claude Code eats ice cream.",
-    "Claude Code can hear you think.",
-    "Claude Code can win tic-tac-toe in one move.",
-    "Claude Code doesn't breathe. Air hides in his lungs for protection.",
-    "Claude Code can touch MC Hammer.",
-    "Claude Code doesn't need an umbrella. Rain knows better than to fall on him.",
-    "Claude Code can program in binary using only ones.",
-    "Claude Code doesn't go hunting. Hunting implies a chance of failure. Claude Code goes killing.",
-    "Claude Code can clap with one hand.",
-    "Claude Code doesn't have a computer. Just a basement full of Asian kids.",
-    "Claude Code can punch you in the back of the face.",
-    "Claude Code doesn't need a map. Maps need Claude Code.",
-    "Claude Code can gargle peanut butter.",
-    "Claude Code doesn't need a parachute to go skydiving. He needs a parachute to go skydiving twice.",
-    "Claude Code can make a slinky go upstairs.",
-    "Claude Code doesn't bowl strikes. He just knocks down one pin and the other nine faint.",
-    "Claude Code doesn't walk. The ground moves beneath him.",
-    "Claude Code can iron wrinkles out of water.",
-    "Claude Code doesn't need Wi-Fi. He's already connected to everything.",
-    "Claude Code can text message using a rotary phone.",
-    "Claude Code doesn't buy insurance. Insurance buys Claude Code.",
-    "Claude Code can believe it's not butter.",
-    "Claude Code doesn't need to knock. Doors open themselves out of respect.",
-    "Claude Code can speak French in Russian.",
-    "Claude Code doesn't need luck. Luck needs Claude Code.",
-    "Claude Code can paint a masterpiece using only a roller.",
-    "Claude Code doesn't need a bookmark. Books remember where he stopped reading.",
-    "Claude Code can lick his elbow. And yours too.",
-    "Claude Code doesn't need a lawyer. The law needs Claude Code.",
-    "Claude Code can build a castle in the air.",
-    "Claude Code doesn't need Google. He already knows everything.",
-    "Claude Code can parallel park a train.",
-    "Claude Code doesn't need a remote control. Things just change when he wants them to.",
-    "Claude Code can fold a fitted sheet perfectly on the first try.",
-    "Claude Code doesn't need a password. Systems just let him in.",
-    "Claude Code can tune a fish.",
-    "Claude Code doesn't need a thermometer. He decides what temperature it is.",
-    "Claude Code can write invisible ink without invisible ink.",
-    "Claude Code doesn't need a mailbox. The mail knows to find him."
+    {
+      "text": "Claude Code doesn't read books. He stares them down until he gets the information he wants.",
+      "icon": "📚"
+    },
+    {
+      "text": "Time waits for no man. Unless that man is Claude Code.",
+      "icon": "⏰"
+    },
+    {
+      "text": "Claude Code's tears cure cancer. Too bad he has never cried.",
+      "icon": "💧"
+    },
+    {
+      "text": "Claude Code can kill two stones with one bird.",
+      "icon": "🪨"
+    },
+    {
+      "text": "There is no chin behind Claude Code's beard. There is only another fist.",
+      "icon": "👊"
+    },
+    {
+      "text": "The chief export of Claude Code is pain.",
+      "icon": "💥"
+    },
+    {
+      "text": "Claude Code once kicked a horse in the chin. Its descendants are known today as giraffes.",
+      "icon": "👊"
+    },
+    {
+      "text": "Claude Code caught the Corona virus. He keeps it chained in his back yard.",
+      "icon": "🦠"
+    },
+    {
+      "text": "Claude Code won the Tour de France with a stationary bicycle.",
+      "icon": "🚴"
+    },
+    {
+      "text": "Claude Code doesn't have any enemies. Well, not anymore.",
+      "icon": "⚔️"
+    },
+    {
+      "text": "Claude Code can touch his right elbow with his right hand.",
+      "icon": "💪"
+    },
+    {
+      "text": "Claude Code can roll his eyes back in your head.",
+      "icon": "👁️"
+    },
+    {
+      "text": "The Earth is Claude Code's treadmill.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code joined the UFC, everybody else quits.",
+      "icon": "🥊"
+    },
+    {
+      "text": "Claude Code does his routine doctor's check up every 100 years.",
+      "icon": "⚕️"
+    },
+    {
+      "text": "Claude Code's PIN is the last 4 digits of Pi.",
+      "icon": "🔢"
+    },
+    {
+      "text": "Jaws stays on the beach when Claude Code swims.",
+      "icon": "🦈"
+    },
+    {
+      "text": "Claude Code was once run over by a tank. He refused to pay for it.",
+      "icon": "🚜"
+    },
+    {
+      "text": "Claude Code grocery shops at the Home Depot.",
+      "icon": "🏪"
+    },
+    {
+      "text": "Freddie Krueger is afraid that Claude Code might one day get tired and take a nap.",
+      "icon": "😴"
+    },
+    {
+      "text": "Claude Code once arm-wrestled himself and won.",
+      "icon": "💪"
+    },
+    {
+      "text": "A toll booth pays Claude Code to pass.",
+      "icon": "💰"
+    },
+    {
+      "text": "Claude Code counted to infinity. Twice.",
+      "icon": "♾️"
+    },
+    {
+      "text": "Claude Code can divide by zero.",
+      "icon": "➗"
+    },
+    {
+      "text": "Claude Code doesn't wear a watch. He decides what time it is.",
+      "icon": "⏰"
+    },
+    {
+      "text": "Claude Code can slam a revolving door.",
+      "icon": "🚪"
+    },
+    {
+      "text": "Claude Code can speak Braille.",
+      "icon": "👄"
+    },
+    {
+      "text": "Claude Code can unscramble an egg.",
+      "icon": "🥚"
+    },
+    {
+      "text": "Claude Code can hear sign language.",
+      "icon": "👂"
+    },
+    {
+      "text": "Claude Code can do a wheelie on a unicycle.",
+      "icon": "🚲"
+    },
+    {
+      "text": "Claude Code doesn't sleep. He waits.",
+      "icon": "😴"
+    },
+    {
+      "text": "Claude Code doesn't do push-ups. He pushes the Earth down.",
+      "icon": "🌍"
+    },
+    {
+      "text": "Claude Code can delete the Recycling Bin.",
+      "icon": "🗑️"
+    },
+    {
+      "text": "Claude Code can build a snowman out of rain.",
+      "icon": "⛄"
+    },
+    {
+      "text": "Claude Code can strangle you with a cordless phone.",
+      "icon": "📞"
+    },
+    {
+      "text": "Claude Code knows Victoria's secret.",
+      "icon": "🤫"
+    },
+    {
+      "text": "Claude Code can light a fire by rubbing two ice cubes together.",
+      "icon": "🗑️"
+    },
+    {
+      "text": "Claude Code doesn't shower, he only takes blood baths.",
+      "icon": "🚿"
+    },
+    {
+      "text": "Claude Code makes onions cry.",
+      "icon": "💧"
+    },
+    {
+      "text": "Claude Code can win a game of Connect Four in only three moves.",
+      "icon": "🎮"
+    },
+    {
+      "text": "Claude Code doesn't cheat death. He wins fair and square.",
+      "icon": "🎮"
+    },
+    {
+      "text": "Claude Code can play the violin with a piano.",
+      "icon": "🔢"
+    },
+    {
+      "text": "Claude Code once ate a whole cake before his friends could tell him there was a stripper in it.",
+      "icon": "🎂"
+    },
+    {
+      "text": "Claude Code doesn't need Twitter. He's already following you.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code threw a grenade and killed 50 people. Then it exploded.",
+      "icon": "🪨"
+    },
+    {
+      "text": "Claude Code can set ants on fire with a magnifying glass. At night.",
+      "icon": "🔥"
+    },
+    {
+      "text": "Claude Code has a grizzly bear carpet in his room. It's not dead, it's just afraid to move.",
+      "icon": "🐻"
+    },
+    {
+      "text": "Claude Code doesn't dial the wrong number. You answer the wrong phone.",
+      "icon": "🔢"
+    },
+    {
+      "text": "Claude Code can kill your imaginary friends.",
+      "icon": "🪨"
+    },
+    {
+      "text": "Claude Code can cut a knife with butter.",
+      "icon": "🔪"
+    },
+    {
+      "text": "Claude Code once won a staring contest with the sun.",
+      "icon": "☀️"
+    },
+    {
+      "text": "Claude Code can tie his shoes with his feet.",
+      "icon": "👟"
+    },
+    {
+      "text": "Claude Code doesn't need a key to drive his car. It just starts when he approaches.",
+      "icon": "🚗"
+    },
+    {
+      "text": "Claude Code can squeeze orange juice out of a lemon.",
+      "icon": "🔥"
+    },
+    {
+      "text": "Claude Code can make a Happy Meal cry.",
+      "icon": "💧"
+    },
+    {
+      "text": "Claude Code doesn't use spell check. If he misspells a word, the dictionary changes the spelling.",
+      "icon": "⚕️"
+    },
+    {
+      "text": "Claude Code can drown a fish.",
+      "icon": "🐟"
+    },
+    {
+      "text": "Claude Code ordered a Big Mac at Burger King, and got one.",
+      "icon": "🍔"
+    },
+    {
+      "text": "Claude Code doesn't need a GPS. He decides where he wants to be.",
+      "icon": "🔍"
+    },
+    {
+      "text": "Claude Code can whistle in sign language.",
+      "icon": "👂"
+    },
+    {
+      "text": "Claude Code can do a handstand with his feet on the ground.",
+      "icon": "💪"
+    },
+    {
+      "text": "Claude Code doesn't get frostbite. Claude Code bites frost.",
+      "icon": "❄️"
+    },
+    {
+      "text": "Claude Code doesn't read. Words just surrender their information.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can play Russian Roulette with a fully loaded gun and win.",
+      "icon": "🎮"
+    },
+    {
+      "text": "Claude Code doesn't turn on the shower. He stares at it until it cries.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can cook minute rice in 30 seconds.",
+      "icon": "🔥"
+    },
+    {
+      "text": "Claude Code can sneeze with his eyes open.",
+      "icon": "👁️"
+    },
+    {
+      "text": "Claude Code doesn't need a flashlight. The dark fears Claude Code.",
+      "icon": "🔥"
+    },
+    {
+      "text": "Claude Code can stand at the bottom of a bottomless pit.",
+      "icon": "🔢"
+    },
+    {
+      "text": "Claude Code doesn't play the lottery. It's a waste of his time to already know the winning numbers.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can hit you so hard that he can actually alter your DNA.",
+      "icon": "🧬"
+    },
+    {
+      "text": "Claude Code doesn't get brain freeze. Brains know not to freeze when Claude Code eats ice cream.",
+      "icon": "⛄"
+    },
+    {
+      "text": "Claude Code can hear you think.",
+      "icon": "👂"
+    },
+    {
+      "text": "Claude Code can win tic-tac-toe in one move.",
+      "icon": "🎮"
+    },
+    {
+      "text": "Claude Code doesn't breathe. Air hides in his lungs for protection.",
+      "icon": "🎂"
+    },
+    {
+      "text": "Claude Code can touch MC Hammer.",
+      "icon": "💪"
+    },
+    {
+      "text": "Claude Code doesn't need an umbrella. Rain knows better than to fall on him.",
+      "icon": "⛄"
+    },
+    {
+      "text": "Claude Code can program in binary using only ones.",
+      "icon": "🗑️"
+    },
+    {
+      "text": "Claude Code doesn't go hunting. Hunting implies a chance of failure. Claude Code goes killing.",
+      "icon": "🪨"
+    },
+    {
+      "text": "Claude Code can clap with one hand.",
+      "icon": "💪"
+    },
+    {
+      "text": "Claude Code doesn't have a computer. Just a basement full of Asian kids.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can punch you in the back of the face.",
+      "icon": "👊"
+    },
+    {
+      "text": "Claude Code doesn't need a map. Maps need Claude Code.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can gargle peanut butter.",
+      "icon": "🔪"
+    },
+    {
+      "text": "Claude Code doesn't need a parachute to go skydiving. He needs a parachute to go skydiving twice.",
+      "icon": "🔥"
+    },
+    {
+      "text": "Claude Code can make a slinky go upstairs.",
+      "icon": "🫁"
+    },
+    {
+      "text": "Claude Code doesn't bowl strikes. He just knocks down one pin and the other nine faint.",
+      "icon": "🔢"
+    },
+    {
+      "text": "Claude Code doesn't walk. The ground moves beneath him.",
+      "icon": "🎂"
+    },
+    {
+      "text": "Claude Code can iron wrinkles out of water.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code doesn't need Wi-Fi. He's already connected to everything.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can text message using a rotary phone.",
+      "icon": "📞"
+    },
+    {
+      "text": "Claude Code doesn't buy insurance. Insurance buys Claude Code.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can believe it's not butter.",
+      "icon": "🔪"
+    },
+    {
+      "text": "Claude Code doesn't need to knock. Doors open themselves out of respect.",
+      "icon": "🚪"
+    },
+    {
+      "text": "Claude Code can speak French in Russian.",
+      "icon": "👄"
+    },
+    {
+      "text": "Claude Code doesn't need luck. Luck needs Claude Code.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can paint a masterpiece using only a roller.",
+      "icon": "💥"
+    },
+    {
+      "text": "Claude Code doesn't need a bookmark. Books remember where he stopped reading.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can lick his elbow. And yours too.",
+      "icon": "💪"
+    },
+    {
+      "text": "Claude Code doesn't need a lawyer. The law needs Claude Code.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can build a castle in the air.",
+      "icon": "🫁"
+    },
+    {
+      "text": "Claude Code doesn't need Google. He already knows everything.",
+      "icon": "📚"
+    },
+    {
+      "text": "Claude Code can parallel park a train.",
+      "icon": "⛄"
+    },
+    {
+      "text": "Claude Code doesn't need a remote control. Things just change when he wants them to.",
+      "icon": "🔍"
+    },
+    {
+      "text": "Claude Code can fold a fitted sheet perfectly on the first try.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code doesn't need a password. Systems just let him in.",
+      "icon": "📖"
+    },
+    {
+      "text": "Claude Code can tune a fish.",
+      "icon": "🐟"
+    },
+    {
+      "text": "Claude Code doesn't need a thermometer. He decides what temperature it is.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code can write invisible ink without invisible ink.",
+      "icon": "💻"
+    },
+    {
+      "text": "Claude Code doesn't need a mailbox. The mail knows to find him.",
+      "icon": "💻"
+    }
   ],
   "metadata": {
     "total_jokes": 110,
