@@ -301,9 +301,14 @@ export async function fetchOpenAIModels(apiKey) {
     }
     
     const data = await response.json();
-    // Filter for chat models only
+    // Filter for chat models only (exclude embeddings and other non-chat models)
     const chatModels = data.data
-      .filter(model => model.id.includes('gpt'))
+      .filter(model => {
+        const id = model.id.toLowerCase();
+        return (id.startsWith('gpt-') || id.startsWith('chatgpt')) && 
+               !id.includes('instruct') && 
+               !id.includes('embedding');
+      })
       .map(model => model.id)
       .sort()
       .reverse();
