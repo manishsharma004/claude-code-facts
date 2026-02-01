@@ -1,40 +1,19 @@
 <script>
-  const facts = [
-    "Claude Code doesn't write bugs. It writes features that users haven't discovered yet.",
-    "When Claude Code compiles, the compiler asks for permission.",
-    "Claude Code can debug production code by just looking at it.",
-    "Claude Code doesn't need to refactor. Code refactors itself in Claude Code's presence.",
-    "Claude Code can write code that passes code review before it's even written.",
-    "When Claude Code deploys to production, production environments upgrade themselves.",
-    "Claude Code's merge conflicts resolve themselves out of respect.",
-    "Claude Code can write infinite loops that finish early.",
-    "Claude Code's code comments are so good, they're sold as documentation.",
-    "When Claude Code pushes to main, main feels honored.",
-    "Claude Code doesn't have technical debt. Technical debt has Claude Code.",
-    "Claude Code can fix race conditions by arriving before they start.",
-    "When Claude Code reviews code, bugs fix themselves before submission.",
-    "Claude Code's TODO comments are completed before they're written.",
-    "Claude Code doesn't use version control. Version control uses Claude Code.",
-    "When Claude Code writes tests, the tests test themselves.",
-    "Claude Code can write self-documenting code that's also self-testing.",
-    "Claude Code's APIs are so RESTful, they put other APIs to sleep.",
-    "When Claude Code writes async code, the callbacks arrive before they're called.",
-    "Claude Code doesn't need CI/CD pipelines. Code integrates and deploys itself.",
-    "Claude Code's code is so clean, it makes ESLint cry tears of joy.",
-    "When Claude Code writes a function, it returns before it's called.",
-    "Claude Code can optimize O(n²) algorithms into O(-1).",
-    "Claude Code's stack traces are actually roadmaps to better code.",
-    "When Claude Code encounters a memory leak, the memory comes back apologizing."
-  ];
+  import jokes from './jokes.json';
 
-  let currentFact = $state(facts[Math.floor(Math.random() * facts.length)]);
+  let showAll = $state(false);
+  let currentJokeIndex = $state(Math.floor(Math.random() * jokes.length));
 
   function getNewFact() {
-    let newFact;
+    let newIndex;
     do {
-      newFact = facts[Math.floor(Math.random() * facts.length)];
-    } while (newFact === currentFact && facts.length > 1);
-    currentFact = newFact;
+      newIndex = Math.floor(Math.random() * jokes.length);
+    } while (newIndex === currentJokeIndex && jokes.length > 1);
+    currentJokeIndex = newIndex;
+  }
+
+  function toggleShowAll() {
+    showAll = !showAll;
   }
 </script>
 
@@ -43,14 +22,35 @@
     <h1 class="title">Claude Code Facts</h1>
     <p class="subtitle">Chuck Norris-style jokes about the legendary Claude Code</p>
     
-    <div class="fact-card">
-      <div class="fact-icon">🤖</div>
-      <p class="fact-text">{currentFact}</p>
-    </div>
-    
-    <button onclick={getNewFact} class="new-fact-btn">
-      Get Another Fact
-    </button>
+    {#if !showAll}
+      <div class="fact-card">
+        <div class="fact-icon">{jokes[currentJokeIndex].icon}</div>
+        <p class="fact-text">{jokes[currentJokeIndex].text}</p>
+      </div>
+      
+      <div class="button-group">
+        <button onclick={getNewFact} class="new-fact-btn">
+          Get Another Fact
+        </button>
+        <button onclick={toggleShowAll} class="show-all-btn">
+          Show All Facts
+        </button>
+      </div>
+    {:else}
+      <div class="all-jokes-container">
+        {#each jokes as joke, index}
+          <div class="joke-item">
+            <div class="joke-number">{index + 1}</div>
+            <div class="joke-icon">{joke.icon}</div>
+            <p class="joke-text">{joke.text}</p>
+          </div>
+        {/each}
+      </div>
+      
+      <button onclick={toggleShowAll} class="back-btn">
+        Back to Random Facts
+      </button>
+    {/if}
     
     <footer class="footer">
       <p>Made with ❤️ and Svelte</p>
@@ -149,6 +149,89 @@
 
   .new-fact-btn:active {
     transform: scale(0.98);
+  }
+
+  .button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .show-all-btn, .back-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #764ba2;
+    border: 2px solid white;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .show-all-btn:hover, .back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: white;
+  }
+
+  .show-all-btn:active, .back-btn:active {
+    transform: scale(0.98);
+  }
+
+  .all-jokes-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+  }
+
+  .joke-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+
+  .joke-item:hover {
+    transform: translateX(5px);
+  }
+
+  .joke-number {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #667eea;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .joke-icon {
+    font-size: 2em;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .joke-text {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .back-btn {
+    margin-top: 20px;
   }
 
   .footer {
