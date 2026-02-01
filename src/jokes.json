@@ -98,5 +98,341 @@
   {
     "text": "When Claude Code encounters a memory leak, the memory comes back apologizing.",
     "icon": "💾"
+  },
+  {
+    "text": "Claude Code's git commits are so clean, they're used as examples in version control textbooks.",
+    "icon": "📕"
+  },
+  {
+    "text": "When Claude Code writes JavaScript, semicolons add themselves out of fear.",
+    "icon": "🔗"
+  },
+  {
+    "text": "Claude Code doesn't follow coding standards. Coding standards follow Claude Code.",
+    "icon": "📐"
+  },
+  {
+    "text": "Claude Code's pull requests get approved by the CI before human review.",
+    "icon": "🔓"
+  },
+  {
+    "text": "When Claude Code writes CSS, browsers implement new features just to render it.",
+    "icon": "🎨"
+  },
+  {
+    "text": "Claude Code doesn't need a debugger. Bugs debug themselves when Claude Code is around.",
+    "icon": "🐞"
+  },
+  {
+    "text": "Claude Code's code reviews are so thorough, they fix bugs in other repositories.",
+    "icon": "🔬"
+  },
+  {
+    "text": "When Claude Code uses recursion, it returns before the first call.",
+    "icon": "🔁"
+  },
+  {
+    "text": "Claude Code doesn't write documentation. The code explains itself to developers.",
+    "icon": "💬"
+  },
+  {
+    "text": "Claude Code's variables are so well-named, they pass the interview for you.",
+    "icon": "🏷️"
+  },
+  {
+    "text": "When Claude Code writes SQL queries, databases optimize themselves.",
+    "icon": "🗄️"
+  },
+  {
+    "text": "Claude Code doesn't need a linter. Code lints itself before Claude Code sees it.",
+    "icon": "🧹"
+  },
+  {
+    "text": "Claude Code's error messages are so helpful, they're published as tutorials.",
+    "icon": "❗"
+  },
+  {
+    "text": "When Claude Code writes React components, they render before mounting.",
+    "icon": "⚛️"
+  },
+  {
+    "text": "Claude Code doesn't use breakpoints. Code breaks at the right point automatically.",
+    "icon": "🎯"
+  },
+  {
+    "text": "Claude Code's TypeScript types are so accurate, they predict future requirements.",
+    "icon": "🎭"
+  },
+  {
+    "text": "When Claude Code writes Docker files, containers optimize themselves.",
+    "icon": "🐳"
+  },
+  {
+    "text": "Claude Code doesn't need try-catch blocks. Exceptions apologize and handle themselves.",
+    "icon": "🛡️"
+  },
+  {
+    "text": "Claude Code's API responses are so fast, they arrive before the request.",
+    "icon": "💨"
+  },
+  {
+    "text": "When Claude Code writes Python, the GIL removes itself.",
+    "icon": "🐍"
+  },
+  {
+    "text": "Claude Code doesn't use design patterns. Design patterns study Claude Code.",
+    "icon": "🎨"
+  },
+  {
+    "text": "Claude Code's commits never conflict. Git creates new timelines to accommodate them.",
+    "icon": "⏳"
+  },
+  {
+    "text": "When Claude Code writes Kubernetes configs, clusters scale themselves perfectly.",
+    "icon": "☸️"
+  },
+  {
+    "text": "Claude Code doesn't need authentication. Systems recognize and trust Claude Code.",
+    "icon": "🔐"
+  },
+  {
+    "text": "Claude Code's database migrations run backwards and forwards simultaneously.",
+    "icon": "🔄"
+  },
+  {
+    "text": "When Claude Code writes HTML, browsers implement new standards on the fly.",
+    "icon": "🌐"
+  },
+  {
+    "text": "Claude Code doesn't have merge conflicts. Branches merge themselves out of respect.",
+    "icon": "🌿"
+  },
+  {
+    "text": "Claude Code's logs are so detailed, they predict problems before they occur.",
+    "icon": "📋"
+  },
+  {
+    "text": "When Claude Code uses Git, commits write themselves from Claude Code's thoughts.",
+    "icon": "💭"
+  },
+  {
+    "text": "Claude Code doesn't need code reviews. The code reviews itself and approves.",
+    "icon": "👍"
+  },
+  {
+    "text": "Claude Code's npm packages have negative installation time.",
+    "icon": "📦"
+  },
+  {
+    "text": "When Claude Code writes Redux, the state manages itself.",
+    "icon": "🏪"
+  },
+  {
+    "text": "Claude Code doesn't use cookies. Browsers remember Claude Code's preferences naturally.",
+    "icon": "🍪"
+  },
+  {
+    "text": "Claude Code's webhooks trigger before the event happens.",
+    "icon": "🪝"
+  },
+  {
+    "text": "When Claude Code writes MongoDB queries, documents organize themselves.",
+    "icon": "🍃"
+  },
+  {
+    "text": "Claude Code doesn't need load balancers. Servers balance themselves around Claude Code.",
+    "icon": "⚖️"
+  },
+  {
+    "text": "Claude Code's regex patterns are so elegant, they're displayed in art museums.",
+    "icon": "🖼️"
+  },
+  {
+    "text": "When Claude Code writes GraphQL, APIs generate optimal schemas automatically.",
+    "icon": "📡"
+  },
+  {
+    "text": "Claude Code doesn't use caching. Data appears instantly when Claude Code needs it.",
+    "icon": "💫"
+  },
+  {
+    "text": "Claude Code's code coverage is 150%. It tests code that hasn't been written yet.",
+    "icon": "🎯"
+  },
+  {
+    "text": "When Claude Code writes Rust, the borrow checker asks for permission.",
+    "icon": "🦀"
+  },
+  {
+    "text": "Claude Code doesn't need environment variables. Environments adapt to Claude Code.",
+    "icon": "🌍"
+  },
+  {
+    "text": "Claude Code's serverless functions run before they're invoked.",
+    "icon": "☁️"
+  },
+  {
+    "text": "When Claude Code writes Go, goroutines schedule themselves optimally.",
+    "icon": "🐹"
+  },
+  {
+    "text": "Claude Code doesn't use feature flags. Features know when to enable themselves.",
+    "icon": "🚩"
+  },
+  {
+    "text": "Claude Code's microservices are so independent, they don't need each other.",
+    "icon": "🔷"
+  },
+  {
+    "text": "When Claude Code writes Java, the JVM optimizes before compilation.",
+    "icon": "☕"
+  },
+  {
+    "text": "Claude Code doesn't need SSL certificates. Data encrypts itself in Claude Code's presence.",
+    "icon": "🔒"
+  },
+  {
+    "text": "Claude Code's promises always resolve, even when they should reject.",
+    "icon": "🤝"
+  },
+  {
+    "text": "When Claude Code uses WebSockets, messages arrive before they're sent.",
+    "icon": "🔌"
+  },
+  {
+    "text": "Claude Code doesn't write boilerplate. The framework generates only what's needed.",
+    "icon": "📄"
+  },
+  {
+    "text": "Claude Code's deployments have zero downtime because time stops out of respect.",
+    "icon": "🕐"
+  },
+  {
+    "text": "When Claude Code writes C++, pointers point themselves.",
+    "icon": "👉"
+  },
+  {
+    "text": "Claude Code doesn't need a staging environment. Production is always stable.",
+    "icon": "🎬"
+  },
+  {
+    "text": "Claude Code's unit tests have 100% code coverage before the code exists.",
+    "icon": "💯"
+  },
+  {
+    "text": "When Claude Code writes Swift, memory manages itself.",
+    "icon": "🐦"
+  },
+  {
+    "text": "Claude Code doesn't use proxies. Requests know where to go.",
+    "icon": "🚦"
+  },
+  {
+    "text": "Claude Code's algorithms are so efficient, they have negative time complexity.",
+    "icon": "⏱️"
+  },
+  {
+    "text": "When Claude Code writes Ruby, gems polish themselves.",
+    "icon": "💎"
+  },
+  {
+    "text": "Claude Code doesn't need monitoring tools. Systems self-report to Claude Code.",
+    "icon": "📊"
+  },
+  {
+    "text": "Claude Code's bash scripts never need chmod. Permissions set themselves.",
+    "icon": "🐚"
+  },
+  {
+    "text": "When Claude Code uses Redis, caches never expire.",
+    "icon": "🔴"
+  },
+  {
+    "text": "Claude Code doesn't write edge cases. Code handles all cases automatically.",
+    "icon": "🎲"
+  },
+  {
+    "text": "Claude Code's dependencies never have vulnerabilities. They patch themselves.",
+    "icon": "🔧"
+  },
+  {
+    "text": "When Claude Code writes Terraform, infrastructure provisions before apply.",
+    "icon": "🏗️"
+  },
+  {
+    "text": "Claude Code doesn't need code formatters. Code formats itself in Claude Code's style.",
+    "icon": "✍️"
+  },
+  {
+    "text": "Claude Code's null checks are unnecessary. Null values avoid Claude Code's code.",
+    "icon": "⭐"
+  },
+  {
+    "text": "When Claude Code writes PHP, the language modernizes itself.",
+    "icon": "🐘"
+  },
+  {
+    "text": "Claude Code doesn't use design reviews. Designs approve themselves.",
+    "icon": "🎨"
+  },
+  {
+    "text": "Claude Code's arrays start at whatever index makes the most sense.",
+    "icon": "🔢"
+  },
+  {
+    "text": "When Claude Code writes Kotlin, Java becomes jealous.",
+    "icon": "🎯"
+  },
+  {
+    "text": "Claude Code doesn't need rate limiting. APIs know when to slow down.",
+    "icon": "🚥"
+  },
+  {
+    "text": "Claude Code's cloud costs are negative. Providers pay Claude Code to use their services.",
+    "icon": "💸"
+  },
+  {
+    "text": "When Claude Code writes YAML, indentation fixes itself.",
+    "icon": "📝"
+  },
+  {
+    "text": "Claude Code doesn't use ORMs. Databases speak directly to Claude Code.",
+    "icon": "🗣️"
+  },
+  {
+    "text": "Claude Code's build times are negative. Projects build before compilation starts.",
+    "icon": "⚡"
+  },
+  {
+    "text": "When Claude Code writes Scala, types infer themselves across universes.",
+    "icon": "🌌"
+  },
+  {
+    "text": "Claude Code doesn't need rollback strategies. Deployments are always perfect.",
+    "icon": "↩️"
+  },
+  {
+    "text": "Claude Code's git history is so clean, it's used to teach linear algebra.",
+    "icon": "📈"
+  },
+  {
+    "text": "When Claude Code optimizes code, hardware upgrades itself to keep up.",
+    "icon": "🖥️"
+  },
+  {
+    "text": "Claude Code doesn't write integration tests. Systems integrate themselves flawlessly.",
+    "icon": "🔗"
+  },
+  {
+    "text": "Claude Code's mobile apps work perfectly on devices that haven't been invented yet.",
+    "icon": "📱"
+  },
+  {
+    "text": "When Claude Code uses Vim, the editor exits itself when finished.",
+    "icon": "⌨️"
+  },
+  {
+    "text": "Claude Code doesn't need backup strategies. Data never dares to get lost.",
+    "icon": "💿"
   }
 ]
