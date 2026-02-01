@@ -14,19 +14,25 @@
   let saving = $state(false);
   let availableModels = $state([]);
   let fetchingModels = $state(false);
+  let modelsError = $state('');
+  let currentOrigin = $state('');
 
   const currentProvider = $derived(PROVIDERS.find(p => p.id === selectedProvider));
 
   onMount(async () => {
+    // Get current origin for CORS help text
+    currentOrigin = window.location.origin;
+    
     // Load saved configuration
     selectedProvider = await getConfig('selectedProvider') || '';
     apiKey = await getConfig('apiKey') || '';
     baseUrl = await getConfig('baseUrl') || '';
     selectedModel = await getConfig('selectedModel') || '';
     
-    // Load available models if provider is already selected
-    if (selectedProvider) {
-      await loadAvailableModels();
+    // If we have saved settings, populate availableModels with at least the selected model
+    // This allows the save button to work without requiring a refresh
+    if (selectedProvider && selectedModel) {
+      availableModels = [selectedModel];
     }
   });
 
@@ -34,23 +40,37 @@
     if (!selectedProvider) return;
     
     fetchingModels = true;
+    modelsError = '';
     try {
       const provider = PROVIDERS.find(p => p.id === selectedProvider);
       
-      // For providers that need API key, only fetch if key is provided
+      // For providers that need API key, require it before fetching
       if (provider.requiresApiKey && !apiKey) {
-        availableModels = provider.models;
-      } else if (provider.requiresBaseUrl && !baseUrl) {
-        availableModels = provider.models;
-      } else {
-        // Try to fetch models from the provider
-        const models = await fetchModels(selectedProvider, apiKey, baseUrl);
-        availableModels = models;
+        availableModels = [];
+        modelsError = 'API key required to fetch models';
+        return;
+      }
+      
+      // For providers that need base URL, require it before fetching
+      if (provider.requiresBaseUrl && !baseUrl) {
+        availableModels = [];
+        modelsError = 'Base URL required to fetch models';
+        return;
+      }
+      
+      // Fetch models from the provider
+      const models = await fetchModels(selectedProvider, apiKey, baseUrl);
+      availableModels = models;
+      modelsError = '';
+      
+      // If current selected model is not in the list, select the first one or default
+      if (!availableModels.includes(selectedModel)) {
+        selectedModel = availableModels[0] || provider.defaultModel;
       }
     } catch (error) {
-      // Fall back to default models
-      const provider = PROVIDERS.find(p => p.id === selectedProvider);
-      availableModels = provider?.models || [];
+      // Show error - do not fall back to hardcoded models
+      availableModels = [];
+      modelsError = error.message || 'Failed to fetch models';
     } finally {
       fetchingModels = false;
     }
@@ -64,8 +84,12 @@
         baseUrl = provider.defaultBaseUrl;
       }
       
-      // Load available models for the selected provider
-      await loadAvailableModels();
+      // Reset models and error
+      availableModels = [];
+      modelsError = '';
+      
+      // Don't automatically fetch models - let user click "Refresh Models" button
+      // This avoids unnecessary network requests and permission prompts
     }
     testResult = null;
   }
@@ -164,7 +188,9 @@
                 onblur={handleFetchModels}
               />
               <p class="help-text">
-                URL where Ollama is running (default: {currentProvider.defaultBaseUrl})
+                URL where Ollama is running (default: {currentProvider.defaultBaseUrl})<br/>
+                <strong>Note:</strong> If you encounter CORS errors, set <code>OLLAMA_ORIGINS={currentOrigin}</code> 
+                environment variable and restart Ollama.
               </p>
             </div>
           {/if}
@@ -181,24 +207,33 @@
                 {fetchingModels ? '🔄 Fetching...' : '🔄 Refresh Models'}
               </button>
             </div>
-            <select id="model" bind:value={selectedModel} disabled={fetchingModels}>
+            {#if modelsError}
+              <div class="models-error">
+                ⚠️ {modelsError}
+              </div>
+            {/if}
+            <select id="model" bind:value={selectedModel} disabled={fetchingModels || availableModels.length === 0}>
               {#if availableModels.length > 0}
                 {#each availableModels as model}
                   <option value={model}>{model}</option>
                 {/each}
               {:else}
-                {#each currentProvider.models as model}
-                  <option value={model}>{model}</option>
-                {/each}
+                <option value="">No models available - click Refresh Models</option>
               {/if}
             </select>
             <p class="help-text">
-              {#if currentProvider.id === 'ollama'}
-                Models available on your Ollama instance
-              {:else if currentProvider.requiresApiKey}
-                {fetchingModels ? 'Fetching available models...' : 'Available models for your account'}
+              {#if fetchingModels}
+                Fetching available models...
+              {:else if modelsError}
+                Please provide valid credentials and click "Refresh Models"
+              {:else if availableModels.length > 0}
+                {availableModels.length} model{availableModels.length !== 1 ? 's' : ''} available
+              {:else if currentProvider.requiresApiKey && !apiKey}
+                Enter API key and click "Refresh Models" to load available models
+              {:else if currentProvider.requiresBaseUrl && !baseUrl}
+                Enter base URL and click "Refresh Models" to load available models
               {:else}
-                Available models from {currentProvider.name}
+                Click "Refresh Models" to fetch available models
               {/if}
             </p>
           </div>
@@ -233,7 +268,7 @@
         <button
           class="save-btn"
           onclick={handleSave}
-          disabled={saving || !selectedProvider || (currentProvider?.requiresApiKey && !apiKey)}
+          disabled={saving || !selectedProvider || (currentProvider?.requiresApiKey && !apiKey) || availableModels.length === 0 || !selectedModel}
         >
           {saving ? 'Saving...' : '💾 Save Settings'}
         </button>
@@ -342,6 +377,15 @@
     line-height: 1.4;
   }
 
+  .help-text code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d63384;
+  }
+
   .button-group {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -378,6 +422,17 @@
   .fetch-models-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  .models-error {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: 500;
   }
 
   .test-btn {
