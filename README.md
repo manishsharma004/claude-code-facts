@@ -88,7 +88,7 @@ The jokes are stored in `claude_code_jokes.json` in a structured JSON format:
 - 📚 Claude Code doesn't read books. He stares them down until he gets the information he wants.
 - ➗ Claude Code can divide by zero.
 - ♾️ Claude Code counted to infinity. Twice.
-- ⏳ Claude Code doesn't sleep. He waits.
+- 😴 Claude Code doesn't sleep. He waits.
 - 🧅 Claude Code makes onions cry.
 - 💻 Claude Code can program in binary using only ones.
 - 🔥 Claude Code can light a fire by rubbing two ice cubes together.
