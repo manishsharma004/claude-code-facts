@@ -4,6 +4,10 @@ Chuck Norris style jokes based on claude-code hype.
 
 A fun web application built with Svelte that displays Chuck Norris-style facts about the legendary Claude Code AI assistant.
 
+## 🌐 Live Website
+
+Visit the website at: **[https://manishsharma004.github.io/claude-code-facts](https://manishsharma004.github.io/claude-code-facts)**
+
 ## Features
 
 - 🤖 25+ hilarious Claude Code facts
@@ -65,6 +69,16 @@ npm run preview
 - **Svelte 5** - Modern reactive UI framework
 - **Vite** - Fast build tool and dev server
 - **CSS3** - Styling with gradients and animations
+
+## 📦 Deployment
+
+This repository is automatically deployed to GitHub Pages using GitHub Actions. The deployment workflow:
+- Triggers on every push to the `main` branch
+- Can be manually triggered via workflow dispatch
+- Builds the Svelte application
+- Deploys the built files to GitHub Pages
+
+**Setup**: Ensure GitHub Pages is enabled in repository settings: **Settings → Pages → Source: GitHub Actions**
 
 ## License
 
