@@ -269,7 +269,7 @@ export async function fetchOllamaModels(baseUrl) {
   const response = await fetch(url);
   
   if (!response.ok) {
-    throw new Error('Failed to fetch Ollama models. Make sure Ollama is running at ' + baseUrl);
+    throw new Error(`Failed to fetch Ollama models. Make sure Ollama is running at ${baseUrl}`);
   }
   
   const data = await response.json();
@@ -333,6 +333,11 @@ export async function fetchAnthropicModels(apiKey) {
   }
   
   const data = await response.json();
+  
+  if (!data.data || !Array.isArray(data.data)) {
+    throw new Error('Invalid response from Anthropic API');
+  }
+  
   const models = data.data.map(model => model.id);
   
   if (models.length === 0) {
@@ -354,6 +359,11 @@ export async function fetchGoogleModels(apiKey) {
   }
   
   const data = await response.json();
+  
+  if (!data.models || !Array.isArray(data.models)) {
+    throw new Error('Invalid response from Google API');
+  }
+  
   const models = data.models
     .filter(model => model.supportedGenerationMethods?.includes('generateContent'))
     .map(model => model.name.replace('models/', ''))
@@ -378,10 +388,15 @@ export async function fetchMistralModels(apiKey) {
   
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || 'Failed to fetch Mistral models');
+    throw new Error(error.error?.message || error.message || 'Failed to fetch Mistral models');
   }
   
   const data = await response.json();
+  
+  if (!data.data || !Array.isArray(data.data)) {
+    throw new Error('Invalid response from Mistral API');
+  }
+  
   const models = data.data.map(model => model.id);
   
   if (models.length === 0) {

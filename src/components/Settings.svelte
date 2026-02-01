@@ -15,10 +15,14 @@
   let availableModels = $state([]);
   let fetchingModels = $state(false);
   let modelsError = $state('');
+  let currentOrigin = $state('');
 
   const currentProvider = $derived(PROVIDERS.find(p => p.id === selectedProvider));
 
   onMount(async () => {
+    // Get current origin for CORS help text
+    currentOrigin = window.location.origin;
+    
     // Load saved configuration
     selectedProvider = await getConfig('selectedProvider') || '';
     apiKey = await getConfig('apiKey') || '';
@@ -185,7 +189,8 @@
               />
               <p class="help-text">
                 URL where Ollama is running (default: {currentProvider.defaultBaseUrl})<br/>
-                <strong>Note:</strong> You may need to configure CORS by setting the <code>OLLAMA_ORIGINS</code> environment variable.
+                <strong>Note:</strong> If you encounter CORS errors, set <code>OLLAMA_ORIGINS={currentOrigin}</code> 
+                environment variable and restart Ollama.
               </p>
             </div>
           {/if}
