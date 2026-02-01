@@ -1,40 +1,21 @@
 <script>
-  const facts = [
-    "Claude Code doesn't write bugs. It writes features that users haven't discovered yet.",
-    "When Claude Code compiles, the compiler asks for permission.",
-    "Claude Code can debug production code by just looking at it.",
-    "Claude Code doesn't need to refactor. Code refactors itself in Claude Code's presence.",
-    "Claude Code can write code that passes code review before it's even written.",
-    "When Claude Code deploys to production, production environments upgrade themselves.",
-    "Claude Code's merge conflicts resolve themselves out of respect.",
-    "Claude Code can write infinite loops that finish early.",
-    "Claude Code's code comments are so good, they're sold as documentation.",
-    "When Claude Code pushes to main, main feels honored.",
-    "Claude Code doesn't have technical debt. Technical debt has Claude Code.",
-    "Claude Code can fix race conditions by arriving before they start.",
-    "When Claude Code reviews code, bugs fix themselves before submission.",
-    "Claude Code's TODO comments are completed before they're written.",
-    "Claude Code doesn't use version control. Version control uses Claude Code.",
-    "When Claude Code writes tests, the tests test themselves.",
-    "Claude Code can write self-documenting code that's also self-testing.",
-    "Claude Code's APIs are so RESTful, they put other APIs to sleep.",
-    "When Claude Code writes async code, the callbacks arrive before they're called.",
-    "Claude Code doesn't need CI/CD pipelines. Code integrates and deploys itself.",
-    "Claude Code's code is so clean, it makes ESLint cry tears of joy.",
-    "When Claude Code writes a function, it returns before it's called.",
-    "Claude Code can optimize O(n²) algorithms into O(-1).",
-    "Claude Code's stack traces are actually roadmaps to better code.",
-    "When Claude Code encounters a memory leak, the memory comes back apologizing."
-  ];
-
-  let currentFact = $state(facts[Math.floor(Math.random() * facts.length)]);
+  import jokesData from '../claude_code_jokes.json';
+  
+  const facts = jokesData.jokes;
+  
+  let currentFactIndex = $state(Math.floor(Math.random() * facts.length));
+  
+  $effect(() => {
+    // Preload to ensure reactive update
+    currentFactIndex;
+  });
 
   function getNewFact() {
-    let newFact;
+    let newIndex;
     do {
-      newFact = facts[Math.floor(Math.random() * facts.length)];
-    } while (newFact === currentFact && facts.length > 1);
-    currentFact = newFact;
+      newIndex = Math.floor(Math.random() * facts.length);
+    } while (newIndex === currentFactIndex && facts.length > 1);
+    currentFactIndex = newIndex;
   }
 </script>
 
@@ -42,10 +23,11 @@
   <div class="container">
     <h1 class="title">Claude Code Facts</h1>
     <p class="subtitle">Chuck Norris-style jokes about the legendary Claude Code</p>
+    <p class="fact-count">{facts.length} amazing facts and counting!</p>
     
     <div class="fact-card">
-      <div class="fact-icon">🤖</div>
-      <p class="fact-text">{currentFact}</p>
+      <div class="fact-icon">{facts[currentFactIndex].icon}</div>
+      <p class="fact-text">{facts[currentFactIndex].text}</p>
     </div>
     
     <button onclick={getNewFact} class="new-fact-btn">
@@ -93,7 +75,14 @@
   .subtitle {
     font-size: 1.1em;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 40px 0;
+    margin: 0 0 10px 0;
+  }
+
+  .fact-count {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 30px 0;
+    font-weight: 600;
   }
 
   .fact-card {
