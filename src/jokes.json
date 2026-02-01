@@ -105,7 +105,7 @@
   },
   {
     "text": "When Claude Code writes JavaScript, semicolons add themselves out of fear.",
-    "icon": "🔗"
+    "icon": "🟨"
   },
   {
     "text": "Claude Code doesn't follow coding standards. Coding standards follow Claude Code.",
