@@ -48,10 +48,11 @@
       await saveGeneratedFact(factText, randomIcon, 'ai-generated');
       
       // Reload generated facts
-      generatedFacts = await getAllGeneratedFacts();
+      const updatedFacts = await getAllGeneratedFacts();
+      generatedFacts = updatedFacts;
       
-      // Show the new fact
-      currentJokeIndex = allFacts.length - 1;
+      // Show the new fact (last in the combined array)
+      currentJokeIndex = jokes.length + updatedFacts.length - 1;
       showAll = false;
     } catch (error) {
       alert('Error generating fact: ' + error.message);
