@@ -1,0 +1,102 @@
+[
+  {
+    "text": "Claude Code doesn't write bugs. It writes features that users haven't discovered yet.",
+    "icon": "🐛"
+  },
+  {
+    "text": "When Claude Code compiles, the compiler asks for permission.",
+    "icon": "⚙️"
+  },
+  {
+    "text": "Claude Code can debug production code by just looking at it.",
+    "icon": "🔍"
+  },
+  {
+    "text": "Claude Code doesn't need to refactor. Code refactors itself in Claude Code's presence.",
+    "icon": "♻️"
+  },
+  {
+    "text": "Claude Code can write code that passes code review before it's even written.",
+    "icon": "✅"
+  },
+  {
+    "text": "When Claude Code deploys to production, production environments upgrade themselves.",
+    "icon": "🚀"
+  },
+  {
+    "text": "Claude Code's merge conflicts resolve themselves out of respect.",
+    "icon": "🔀"
+  },
+  {
+    "text": "Claude Code can write infinite loops that finish early.",
+    "icon": "♾️"
+  },
+  {
+    "text": "Claude Code's code comments are so good, they're sold as documentation.",
+    "icon": "📝"
+  },
+  {
+    "text": "When Claude Code pushes to main, main feels honored.",
+    "icon": "📤"
+  },
+  {
+    "text": "Claude Code doesn't have technical debt. Technical debt has Claude Code.",
+    "icon": "💰"
+  },
+  {
+    "text": "Claude Code can fix race conditions by arriving before they start.",
+    "icon": "🏁"
+  },
+  {
+    "text": "When Claude Code reviews code, bugs fix themselves before submission.",
+    "icon": "👀"
+  },
+  {
+    "text": "Claude Code's TODO comments are completed before they're written.",
+    "icon": "✏️"
+  },
+  {
+    "text": "Claude Code doesn't use version control. Version control uses Claude Code.",
+    "icon": "📚"
+  },
+  {
+    "text": "When Claude Code writes tests, the tests test themselves.",
+    "icon": "🧪"
+  },
+  {
+    "text": "Claude Code can write self-documenting code that's also self-testing.",
+    "icon": "📖"
+  },
+  {
+    "text": "Claude Code's APIs are so RESTful, they put other APIs to sleep.",
+    "icon": "😴"
+  },
+  {
+    "text": "When Claude Code writes async code, the callbacks arrive before they're called.",
+    "icon": "⚡"
+  },
+  {
+    "text": "Claude Code doesn't need CI/CD pipelines. Code integrates and deploys itself.",
+    "icon": "🔄"
+  },
+  {
+    "text": "Claude Code's code is so clean, it makes ESLint cry tears of joy.",
+    "icon": "✨"
+  },
+  {
+    "text": "When Claude Code writes a function, it returns before it's called.",
+    "icon": "⏰"
+  },
+  {
+    "text": "Claude Code can optimize O(n²) algorithms into O(-1).",
+    "icon": "📊"
+  },
+  {
+    "text": "Claude Code's stack traces are actually roadmaps to better code.",
+    "icon": "🗺️"
+  },
+  {
+    "text": "When Claude Code encounters a memory leak, the memory comes back apologizing.",
+    "icon": "💾"
+  }
+]
