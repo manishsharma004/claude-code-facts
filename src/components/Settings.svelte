@@ -1,5 +1,5 @@
 <script>
-  import { PROVIDERS, testConnection } from '../lib/llm.js';
+  import { PROVIDERS, testConnection, fetchModels } from '../lib/llm.js';
   import { getConfig, setConfig } from '../lib/db.js';
   import { onMount } from 'svelte';
 
@@ -12,6 +12,8 @@
   let testResult = $state(null);
   let testing = $state(false);
   let saving = $state(false);
+  let availableModels = $state([]);
+  let fetchingModels = $state(false);
 
   const currentProvider = $derived(PROVIDERS.find(p => p.id === selectedProvider));
 
@@ -21,17 +23,55 @@
     apiKey = await getConfig('apiKey') || '';
     baseUrl = await getConfig('baseUrl') || '';
     selectedModel = await getConfig('selectedModel') || '';
+    
+    // Load available models if provider is already selected
+    if (selectedProvider) {
+      await loadAvailableModels();
+    }
   });
 
-  function handleProviderChange() {
+  async function loadAvailableModels() {
+    if (!selectedProvider) return;
+    
+    fetchingModels = true;
+    try {
+      const provider = PROVIDERS.find(p => p.id === selectedProvider);
+      
+      // For providers that need API key, only fetch if key is provided
+      if (provider.requiresApiKey && !apiKey) {
+        availableModels = provider.models;
+      } else if (provider.requiresBaseUrl && !baseUrl) {
+        availableModels = provider.models;
+      } else {
+        // Try to fetch models from the provider
+        const models = await fetchModels(selectedProvider, apiKey, baseUrl);
+        availableModels = models;
+      }
+    } catch (error) {
+      // Fall back to default models
+      const provider = PROVIDERS.find(p => p.id === selectedProvider);
+      availableModels = provider?.models || [];
+    } finally {
+      fetchingModels = false;
+    }
+  }
+
+  async function handleProviderChange() {
     const provider = PROVIDERS.find(p => p.id === selectedProvider);
     if (provider) {
       selectedModel = provider.defaultModel;
       if (provider.defaultBaseUrl) {
         baseUrl = provider.defaultBaseUrl;
       }
+      
+      // Load available models for the selected provider
+      await loadAvailableModels();
     }
     testResult = null;
+  }
+
+  async function handleFetchModels() {
+    await loadAvailableModels();
   }
 
   async function handleTestConnection() {
@@ -97,15 +137,6 @@
         </div>
 
         {#if currentProvider}
-          <div class="form-group">
-            <label for="model">Model</label>
-            <select id="model" bind:value={selectedModel}>
-              {#each currentProvider.models as model}
-                <option value={model}>{model}</option>
-              {/each}
-            </select>
-          </div>
-
           {#if currentProvider.requiresApiKey}
             <div class="form-group">
               <label for="apiKey">API Key</label>
@@ -114,6 +145,7 @@
                 type="password"
                 bind:value={apiKey}
                 placeholder="Enter your API key"
+                onblur={handleFetchModels}
               />
               <p class="help-text">
                 Your API key is stored locally in your browser and never sent anywhere except to {currentProvider.name}
@@ -129,12 +161,47 @@
                 type="text"
                 bind:value={baseUrl}
                 placeholder={currentProvider.defaultBaseUrl}
+                onblur={handleFetchModels}
               />
               <p class="help-text">
                 URL where Ollama is running (default: {currentProvider.defaultBaseUrl})
               </p>
             </div>
           {/if}
+
+          <div class="form-group">
+            <div class="model-header">
+              <label for="model">Model</label>
+              <button
+                class="fetch-models-btn"
+                onclick={handleFetchModels}
+                disabled={fetchingModels || (currentProvider.requiresApiKey && !apiKey) || (currentProvider.requiresBaseUrl && !baseUrl)}
+                title="Fetch available models"
+              >
+                {fetchingModels ? '🔄 Fetching...' : '🔄 Refresh Models'}
+              </button>
+            </div>
+            <select id="model" bind:value={selectedModel} disabled={fetchingModels}>
+              {#if availableModels.length > 0}
+                {#each availableModels as model}
+                  <option value={model}>{model}</option>
+                {/each}
+              {:else}
+                {#each currentProvider.models as model}
+                  <option value={model}>{model}</option>
+                {/each}
+              {/if}
+            </select>
+            <p class="help-text">
+              {#if currentProvider.id === 'ollama'}
+                Models available on your Ollama instance
+              {:else if currentProvider.requiresApiKey}
+                {fetchingModels ? 'Fetching available models...' : 'Available models for your account'}
+              {:else}
+                Available models from {currentProvider.name}
+              {/if}
+            </p>
+          </div>
 
           <div class="button-group">
             <button
@@ -278,6 +345,39 @@
   .button-group {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .model-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .model-header label {
+    margin-bottom: 0;
+  }
+
+  .fetch-models-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .fetch-models-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  }
+
+  .fetch-models-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   .test-btn {
