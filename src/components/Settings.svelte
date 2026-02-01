@@ -25,9 +25,10 @@
     baseUrl = await getConfig('baseUrl') || '';
     selectedModel = await getConfig('selectedModel') || '';
     
-    // Load available models if provider is already selected
-    if (selectedProvider) {
-      await loadAvailableModels();
+    // If we have saved settings, populate availableModels with at least the selected model
+    // This allows the save button to work without requiring a refresh
+    if (selectedProvider && selectedModel) {
+      availableModels = [selectedModel];
     }
   });
 
@@ -83,8 +84,8 @@
       availableModels = [];
       modelsError = '';
       
-      // Load available models for the selected provider
-      await loadAvailableModels();
+      // Don't automatically fetch models - let user click "Refresh Models" button
+      // This avoids unnecessary network requests and permission prompts
     }
     testResult = null;
   }
@@ -183,7 +184,8 @@
                 onblur={handleFetchModels}
               />
               <p class="help-text">
-                URL where Ollama is running (default: {currentProvider.defaultBaseUrl})
+                URL where Ollama is running (default: {currentProvider.defaultBaseUrl})<br/>
+                <strong>Note:</strong> You may need to configure CORS by setting the <code>OLLAMA_ORIGINS</code> environment variable.
               </p>
             </div>
           {/if}
@@ -368,6 +370,15 @@
     font-size: 0.9em;
     color: #666;
     line-height: 1.4;
+  }
+
+  .help-text code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d63384;
   }
 
   .button-group {
