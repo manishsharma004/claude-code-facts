@@ -16,7 +16,7 @@ A fun web application built with Svelte that displays Chuck Norris-style facts a
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
+- Node.js (version 20.19 or higher)
 - npm
 
 ### Installation
