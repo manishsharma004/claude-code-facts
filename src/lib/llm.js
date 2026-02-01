@@ -12,28 +12,24 @@ export const PROVIDERS = [
     id: 'openai',
     name: 'OpenAI',
     requiresApiKey: true,
-    models: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-3.5-turbo'],
     defaultModel: 'gpt-4o-mini'
   },
   {
     id: 'anthropic',
     name: 'Anthropic Claude',
     requiresApiKey: true,
-    models: ['claude-3-5-sonnet-20241022', 'claude-3-5-haiku-20241022', 'claude-3-opus-20240229'],
     defaultModel: 'claude-3-5-haiku-20241022'
   },
   {
     id: 'google',
     name: 'Google Gemini',
     requiresApiKey: true,
-    models: ['gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash'],
     defaultModel: 'gemini-2.0-flash-exp'
   },
   {
     id: 'mistral',
     name: 'Mistral AI',
     requiresApiKey: true,
-    models: ['mistral-large-latest', 'mistral-medium-latest', 'mistral-small-latest'],
     defaultModel: 'mistral-small-latest'
   },
   {
@@ -41,7 +37,6 @@ export const PROVIDERS = [
     name: 'Ollama (Local)',
     requiresApiKey: false,
     requiresBaseUrl: true,
-    models: ['llama3.2', 'llama3.1', 'mistral', 'phi3', 'gemma2'],
     defaultModel: 'llama3.2',
     defaultBaseUrl: 'http://localhost:11434'
   }
@@ -270,111 +265,130 @@ export async function generateFact() {
  * Fetch available models from Ollama
  */
 export async function fetchOllamaModels(baseUrl) {
-  try {
-    const url = `${baseUrl}/api/tags`;
-    const response = await fetch(url);
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch Ollama models. Make sure Ollama is running.');
-    }
-    
-    const data = await response.json();
-    return data.models.map(model => model.name);
-  } catch (error) {
-    throw new Error(`Failed to fetch Ollama models: ${error.message}`);
+  const url = `${baseUrl}/api/tags`;
+  const response = await fetch(url);
+  
+  if (!response.ok) {
+    throw new Error('Failed to fetch Ollama models. Make sure Ollama is running at ' + baseUrl);
   }
+  
+  const data = await response.json();
+  
+  if (!data.models || data.models.length === 0) {
+    throw new Error('No models found on Ollama instance. Please install at least one model using: ollama pull <model-name>');
+  }
+  
+  return data.models.map(model => model.name);
 }
 
 /**
  * Fetch available models from OpenAI
  */
 export async function fetchOpenAIModels(apiKey) {
-  try {
-    const response = await fetch('https://api.openai.com/v1/models', {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`
-      }
-    });
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch OpenAI models');
+  const response = await fetch('https://api.openai.com/v1/models', {
+    headers: {
+      'Authorization': `Bearer ${apiKey}`
     }
-    
-    const data = await response.json();
-    // Filter for chat models only (exclude embeddings and other non-chat models)
-    const chatModels = data.data
-      .filter(model => {
-        const id = model.id.toLowerCase();
-        return (id.startsWith('gpt-') || id.startsWith('chatgpt')) && 
-               !id.includes('instruct') && 
-               !id.includes('embedding');
-      })
-      .map(model => model.id)
-      .sort()
-      .reverse();
-    
-    return chatModels.length > 0 ? chatModels : ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-3.5-turbo'];
-  } catch (error) {
-    // Return default models if fetch fails
-    return ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-3.5-turbo'];
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || 'Failed to fetch OpenAI models');
   }
+  
+  const data = await response.json();
+  // Filter for chat models only (exclude embeddings and other non-chat models)
+  const chatModels = data.data
+    .filter(model => {
+      const id = model.id.toLowerCase();
+      return (id.startsWith('gpt-') || id.startsWith('chatgpt')) && 
+             !id.includes('instruct') && 
+             !id.includes('embedding');
+    })
+    .map(model => model.id)
+    .sort()
+    .reverse();
+  
+  if (chatModels.length === 0) {
+    throw new Error('No compatible chat models found');
+  }
+  
+  return chatModels;
 }
 
 /**
  * Fetch available models from Anthropic
  */
 export async function fetchAnthropicModels(apiKey) {
-  // Anthropic doesn't have a models list endpoint, so return the known models
-  return ['claude-3-5-sonnet-20241022', 'claude-3-5-haiku-20241022', 'claude-3-opus-20240229'];
+  const response = await fetch('https://api.anthropic.com/v1/models', {
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    }
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || 'Failed to fetch Anthropic models');
+  }
+  
+  const data = await response.json();
+  const models = data.data.map(model => model.id);
+  
+  if (models.length === 0) {
+    throw new Error('No models found');
+  }
+  
+  return models;
 }
 
 /**
  * Fetch available models from Google
  */
 export async function fetchGoogleModels(apiKey) {
-  try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch Google models');
-    }
-    
-    const data = await response.json();
-    const models = data.models
-      .filter(model => model.supportedGenerationMethods?.includes('generateContent'))
-      .map(model => model.name.replace('models/', ''))
-      .filter(name => name.includes('gemini'));
-    
-    return models.length > 0 ? models : ['gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash'];
-  } catch (error) {
-    // Return default models if fetch fails
-    return ['gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash'];
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || 'Failed to fetch Google models');
   }
+  
+  const data = await response.json();
+  const models = data.models
+    .filter(model => model.supportedGenerationMethods?.includes('generateContent'))
+    .map(model => model.name.replace('models/', ''))
+    .filter(name => name.includes('gemini'));
+  
+  if (models.length === 0) {
+    throw new Error('No compatible Gemini models found');
+  }
+  
+  return models;
 }
 
 /**
  * Fetch available models from Mistral
  */
 export async function fetchMistralModels(apiKey) {
-  try {
-    const response = await fetch('https://api.mistral.ai/v1/models', {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`
-      }
-    });
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch Mistral models');
+  const response = await fetch('https://api.mistral.ai/v1/models', {
+    headers: {
+      'Authorization': `Bearer ${apiKey}`
     }
-    
-    const data = await response.json();
-    const models = data.data.map(model => model.id);
-    
-    return models.length > 0 ? models : ['mistral-large-latest', 'mistral-medium-latest', 'mistral-small-latest'];
-  } catch (error) {
-    // Return default models if fetch fails
-    return ['mistral-large-latest', 'mistral-medium-latest', 'mistral-small-latest'];
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Failed to fetch Mistral models');
   }
+  
+  const data = await response.json();
+  const models = data.data.map(model => model.id);
+  
+  if (models.length === 0) {
+    throw new Error('No models found');
+  }
+  
+  return models;
 }
 
 /**
