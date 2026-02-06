@@ -10,7 +10,7 @@ Visit the website at: **[https://manishsharma004.github.io/claude-code-facts](ht
 
 ## Features
 
-- 🤖 25+ hilarious Claude Code facts
+- 🤖 159 hilarious Claude Code facts (including 50 Jeff Dean-style technical jokes)
 - 🎲 Random fact generator
 - 📱 Responsive design
 - ⚡ Built with Svelte and Vite for blazing fast performance
@@ -86,4 +86,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-Made with ❤️ and Svelte. Inspired by Chuck Norris jokes and AI coding assistants.
+Made with ❤️ and Svelte. Inspired by Chuck Norris jokes, Jeff Dean facts, and AI coding assistants.
+

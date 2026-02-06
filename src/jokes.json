@@ -434,5 +434,205 @@
   {
     "text": "Claude Code doesn't need backup strategies. Data never dares to get lost.",
     "icon": "💿"
+  },
+  {
+    "text": "Claude Code once proved P=NP by solving all NP-complete problems in O(1) time.",
+    "icon": "🧮"
+  },
+  {
+    "text": "When Claude Code writes MapReduce, data reduces itself before mapping.",
+    "icon": "🗺️"
+  },
+  {
+    "text": "Claude Code doesn't use Big O notation. Big O notation uses Claude Code as a reference.",
+    "icon": "📈"
+  },
+  {
+    "text": "Claude Code once wrote a sorting algorithm that sorted data before it was generated.",
+    "icon": "🔀"
+  },
+  {
+    "text": "When Claude Code compiles code, machine code asks for clarification.",
+    "icon": "🖥️"
+  },
+  {
+    "text": "Claude Code writes code in binary. The source code is just for human readers.",
+    "icon": "💾"
+  },
+  {
+    "text": "Claude Code's hash tables have no collisions. Hash values choose unique buckets out of respect.",
+    "icon": "🗃️"
+  },
+  {
+    "text": "When Claude Code does a code review, computers fix their own hardware bugs.",
+    "icon": "🔍"
+  },
+  {
+    "text": "Claude Code doesn't need distributed systems. All servers are local to Claude Code.",
+    "icon": "🌐"
+  },
+  {
+    "text": "Claude Code once optimized Bubble Sort into O(log log n) time complexity.",
+    "icon": "🫧"
+  },
+  {
+    "text": "When Claude Code uses malloc, memory allocates itself before the call.",
+    "icon": "💻"
+  },
+  {
+    "text": "Claude Code doesn't have race conditions. All threads wait their turn politely.",
+    "icon": "🏃"
+  },
+  {
+    "text": "Claude Code's garbage collector runs before objects are created.",
+    "icon": "🗑️"
+  },
+  {
+    "text": "When Claude Code writes assembly, CPUs add new instruction sets.",
+    "icon": "⚙️"
+  },
+  {
+    "text": "Claude Code doesn't use cache invalidation. Caches know when to refresh themselves.",
+    "icon": "💨"
+  },
+  {
+    "text": "Claude Code once wrote a deadlock that resolved itself proactively.",
+    "icon": "🔓"
+  },
+  {
+    "text": "When Claude Code does bit shifting, bits shift themselves across the data center.",
+    "icon": "↔️"
+  },
+  {
+    "text": "Claude Code's linked lists are so efficient, they're actually arrays in disguise.",
+    "icon": "🔗"
+  },
+  {
+    "text": "Claude Code doesn't need semaphores. Processes synchronize themselves out of courtesy.",
+    "icon": "🚦"
+  },
+  {
+    "text": "When Claude Code writes to disk, SSDs become HDDs just to keep up.",
+    "icon": "💽"
+  },
+  {
+    "text": "Claude Code's tree traversals visit nodes before they exist.",
+    "icon": "🌳"
+  },
+  {
+    "text": "Claude Code doesn't use Big Data. Small data scales itself up when Claude Code needs it.",
+    "icon": "📊"
+  },
+  {
+    "text": "When Claude Code writes networking code, packets arrive before they're sent.",
+    "icon": "📡"
+  },
+  {
+    "text": "Claude Code's matrix multiplications complete in O(1) regardless of dimensions.",
+    "icon": "🔢"
+  },
+  {
+    "text": "Claude Code doesn't need load testing. Servers know their limits around Claude Code.",
+    "icon": "⚖️"
+  },
+  {
+    "text": "When Claude Code writes compilers, they compile themselves.",
+    "icon": "🔨"
+  },
+  {
+    "text": "Claude Code's neural networks train themselves before forward propagation.",
+    "icon": "🧠"
+  },
+  {
+    "text": "Claude Code doesn't experience the halting problem. Programs tell Claude Code when they'll stop.",
+    "icon": "⏹️"
+  },
+  {
+    "text": "When Claude Code uses virtual memory, RAM expands to accommodate it.",
+    "icon": "🎰"
+  },
+  {
+    "text": "Claude Code's page faults are so elegant, they're considered features.",
+    "icon": "📄"
+  },
+  {
+    "text": "Claude Code doesn't need consensus algorithms. Distributed nodes naturally agree.",
+    "icon": "🔘"
+  },
+  {
+    "text": "When Claude Code writes Turing machines, they compute beyond the Church-Turing thesis.",
+    "icon": "🤖"
+  },
+  {
+    "text": "Claude Code's context switches happen so fast, the OS doesn't notice.",
+    "icon": "🔄"
+  },
+  {
+    "text": "Claude Code doesn't use interrupt handlers. Hardware interrupts itself politely.",
+    "icon": "⚠️"
+  },
+  {
+    "text": "When Claude Code uses pointers, they point to the future state of memory.",
+    "icon": "👉"
+  },
+  {
+    "text": "Claude Code's API calls complete before the TCP handshake.",
+    "icon": "🤝"
+  },
+  {
+    "text": "Claude Code doesn't need sharding. Single databases scale infinitely for Claude Code.",
+    "icon": "🔪"
+  },
+  {
+    "text": "When Claude Code writes DNS resolvers, domains resolve themselves.",
+    "icon": "🌍"
+  },
+  {
+    "text": "Claude Code's threads never block. I/O operations complete synchronously out of fear.",
+    "icon": "🧵"
+  },
+  {
+    "text": "Claude Code doesn't use CAP theorem. It achieves consistency, availability, and partition tolerance simultaneously.",
+    "icon": "🎩"
+  },
+  {
+    "text": "When Claude Code uses BitTorrent, seeds appear before the torrent is created.",
+    "icon": "🌱"
+  },
+  {
+    "text": "Claude Code's SQL queries are so optimized, databases upgrade their query planners.",
+    "icon": "🗄️"
+  },
+  {
+    "text": "Claude Code doesn't need indexing. Data structures organize themselves for Claude Code.",
+    "icon": "📇"
+  },
+  {
+    "text": "When Claude Code uses RAID, disks synchronize themselves across time zones.",
+    "icon": "💾"
+  },
+  {
+    "text": "Claude Code's lambda functions execute before invocation.",
+    "icon": "λ"
+  },
+  {
+    "text": "Claude Code doesn't use TCP. Packets deliver themselves reliably over UDP.",
+    "icon": "📦"
+  },
+  {
+    "text": "When Claude Code writes kernel code, the kernel asks permission to run.",
+    "icon": "🌽"
+  },
+  {
+    "text": "Claude Code's heapsort runs in O(n log n) best case, worst case, and average case. Actually, O(n).",
+    "icon": "📚"
+  },
+  {
+    "text": "Claude Code doesn't need transaction isolation. All transactions are naturally serializable.",
+    "icon": "🔐"
+  },
+  {
+    "text": "When Claude Code uses blockchain, blocks chain themselves before mining.",
+    "icon": "⛓️"
   }
 ]
