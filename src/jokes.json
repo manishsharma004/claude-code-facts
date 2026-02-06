@@ -557,7 +557,7 @@
   },
   {
     "text": "Claude Code doesn't need consensus algorithms. Distributed nodes naturally agree.",
-    "icon": "🤝"
+    "icon": "🔘"
   },
   {
     "text": "When Claude Code writes Turing machines, they compute beyond the Church-Turing thesis.",
@@ -601,7 +601,7 @@
   },
   {
     "text": "Claude Code's SQL queries are so optimized, databases upgrade their query planners.",
-    "icon": "🔍"
+    "icon": "🗄️"
   },
   {
     "text": "Claude Code doesn't need indexing. Data structures organize themselves for Claude Code.",
@@ -609,7 +609,7 @@
   },
   {
     "text": "When Claude Code uses RAID, disks synchronize themselves across time zones.",
-    "icon": "💿"
+    "icon": "💾"
   },
   {
     "text": "Claude Code's lambda functions execute before invocation.",
